@@ -1,0 +1,100 @@
+{
+  "name": "@advanced-rest-client/oauth",
+  "description": "The OAuth library for the Advanced REST Client",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "module": "index.js",
+  "author": {
+    "name": "Pawel Uchida-Psztyc",
+    "email": "pawel.psztyc@gmail.com"
+  },
+  "contributors": [
+    "Your name can be here!"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/advanced-rest-client/oauth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/advanced-rest-client/oauth/issues",
+    "email": "arc@mulesoft.com"
+  },
+  "dependencies": {
+    "@advanced-rest-client/events": "^0.2.28"
+  },
+  "peerDependencies": {
+    "jsrsasign": "^10.4.0"
+  },
+  "devDependencies": {
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1",
+    "@advanced-rest-client/arc-mock": "^5.0.0",
+    "@commitlint/cli": "^13.2.1",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@open-wc/eslint-config": "^7.0.0",
+    "@open-wc/testing": "^3.0.2",
+    "@web/dev-server": "^0.1.25",
+    "@web/test-runner": "^0.13.20",
+    "@web/test-runner-playwright": "^0.8.8",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "get-port": "^6.0.0",
+    "husky": "^7.0.2",
+    "jsrsasign": "^10.4.1",
+    "koa-proxies": "^0.12.1",
+    "lint-staged": "^11.2.6",
+    "oauth2-mock-server": "^3.2.0",
+    "sinon": "^11.1.2",
+    "typescript": "^4.4.4",
+    "typescript-lit-html-plugin": "^0.9.0"
+  },
+  "scripts": {
+    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
+    "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
+    "lint:types": "tsc",
+    "lint": "npm run lint:eslint",
+    "format": "npm run format:eslint",
+    "test": "web-test-runner test/**/*.test.js --coverage --node-resolve --playwright --browsers chromium firefox webkit",
+    "test:watch": "web-test-runner --config web-test-runner.config.mjs --watch",
+    "gen:wc": "wca analyze \"*.js\" --outFile custom-elements.json",
+    "prepare": "husky install"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "demo/**/*.js",
+          "test/**/*.js",
+          "test/*.js",
+          "**/demo/**/*.html"
+        ],
+        "rules": {
+          "no-console": "off",
+          "no-unused-expressions": "off",
+          "no-plusplus": "off",
+          "no-continue": "off",
+          "no-param-reassign": "off",
+          "class-methods-use-this": "off",
+          "import/no-extraneous-dependencies": "off",
+          "prefer-destructuring": "off",
+          "no-template-curly-in-string": "off"
+        }
+      }
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
+}

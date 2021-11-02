@@ -1,0 +1,5 @@
+coverage/
+test/
+.*
+commitlint.config.js
+web-test-runner.config.mjs
