@@ -44,7 +44,7 @@
     "jsrsasign": "^10.4.1",
     "koa-proxies": "^0.12.1",
     "lint-staged": "^11.2.6",
-    "oauth2-mock-server": "^3.2.0",
+    "oauth2-mock-server": "^4.1.1",
     "sinon": "^11.1.2",
     "typescript": "^4.4.4",
     "typescript-lit-html-plugin": "^0.9.0"
