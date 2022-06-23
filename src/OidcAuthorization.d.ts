@@ -1,5 +1,5 @@
-import { OidcTokenError, OidcTokenInfo } from '@advanced-rest-client/events/src/authorization/Authorization';
 import { OAuth2Authorization } from './OAuth2Authorization.js';
+import { OidcTokenError, OidcTokenInfo } from './types.js';
 
 export declare class OidcAuthorization extends OAuth2Authorization {
   /**

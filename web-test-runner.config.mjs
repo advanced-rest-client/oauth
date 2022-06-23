@@ -65,11 +65,10 @@ export default /** @type TestRunnerConfig */ ({
       name: 'servers',
       async serverStart() {
         const port = await getPort({ port: portNumbers(8000, 8100) });
-        const jwtKey = await oauth2server.issuer.keys.generateRSA();
+        await oauth2server.issuer.keys.generate('RS256');
         await oauth2server.start(port, 'localhost');
         oauth2env = {
           port,
-          jwtKey,
           issuer: oauth2server.issuer.url,
         };
       },

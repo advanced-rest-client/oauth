@@ -1,5 +1,4 @@
-import { Authorization } from '@advanced-rest-client/events';
-import { ProcessingOptions } from './types';
+import { ProcessingOptions, OAuth2Authorization as OAuth2Config, TokenInfo } from './types';
 
 export declare const resolveFunction: unique symbol;
 export declare const rejectFunction: unique symbol;
@@ -38,16 +37,13 @@ export declare const grantResponseMapping: Record<string, string>;
 
 /**
  * A library that performs OAuth 2 authorization.
- * 
- * It is build for API components ecosystem and the configuration is defined in `@advanced-rest-client/events`
- * so all components use the same configuration.
  */
 export class OAuth2Authorization {
   /**
    * The authorization settings used to initialize this class.
    */
-  get settings(): Authorization.OAuth2Authorization;
-  [settingsValue]: Authorization.OAuth2Authorization;
+  get settings(): OAuth2Config;
+  [settingsValue]: OAuth2Config;
 
   /**
    * The processing options used to initialize this object.
@@ -70,12 +66,12 @@ export class OAuth2Authorization {
    * @param settings The authorization configuration.
    * @param options Additional processing options to configure the behavior of this library.
    */
-  constructor(settings: Authorization.OAuth2Authorization, options?: ProcessingOptions);
+  constructor(settings: OAuth2Config, options?: ProcessingOptions);
 
   /**
    * @returns Processed settings
    */
-  [prepareSettings](settings: Authorization.OAuth2Authorization): Authorization.OAuth2Authorization;
+  [prepareSettings](settings: OAuth2Config): OAuth2Config;
 
   /**
    * @returns Processed options
@@ -93,7 +89,7 @@ export class OAuth2Authorization {
    * Performs the authorization.
    * @returns Promise resolved to the token info.
    */
-  authorize(): Promise<Authorization.TokenInfo|any>;
+  authorize(): Promise<TokenInfo|any>;
 
   /**
    * Reports authorization error back to the application.
@@ -204,14 +200,14 @@ export class OAuth2Authorization {
   /**
    * Creates a token info object from query parameters
    */
-  [tokenInfoFromParams](oauthParams: URLSearchParams): Authorization.TokenInfo;
+  [tokenInfoFromParams](oauthParams: URLSearchParams): TokenInfo;
 
   /**
    * Processes token info object when it's ready.
    *
    * @param info Token info returned from the server.
    */
-  [handleTokenInfo](info: Authorization.TokenInfo): void;
+  [handleTokenInfo](info: TokenInfo): void;
 
   /**
    * Computes token expiration time.
@@ -221,7 +217,7 @@ export class OAuth2Authorization {
    * @param tokenInfo Token info object
    * @returns A copy with updated properties.
    */
-  [computeExpires](tokenInfo: Authorization.TokenInfo): Authorization.TokenInfo;
+  [computeExpires](tokenInfo: TokenInfo): TokenInfo;
 
   /**
    * Computes the final list of granted scopes.
@@ -260,7 +256,7 @@ export class OAuth2Authorization {
    * @param info
    * @returns The token info when the request was a success.
    */
-  mapCodeResponse(info: Record<string, any>): Authorization.TokenInfo;
+  mapCodeResponse(info: Record<string, any>): TokenInfo;
 
   /**
    * Exchanges the authorization code for authorization token.
@@ -268,7 +264,7 @@ export class OAuth2Authorization {
    * @param code Returned code from the authorization endpoint.
    * @returns The token info when the request was a success.
    */
-  exchangeCode(code: string): Promise<Authorization.TokenInfo>;
+  exchangeCode(code: string): Promise<TokenInfo>;
 
   /**
    * Returns a body value for the code exchange request.
@@ -305,7 +301,7 @@ export class OAuth2Authorization {
    * 
    * @param settings The OAuth 2 settings to use
    */
-  getClientCredentialsHeader(settings: Authorization.OAuth2Authorization): string;
+  getClientCredentialsHeader(settings: OAuth2Config): string;
 
   /**
    * Requests a token for `client_credentials` request type.

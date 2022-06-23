@@ -8,9 +8,9 @@ import { IframeAuthorization } from './lib/IframeAuthorization.js';
 import { PopupAuthorization } from './lib/PopupAuthorization.js';
 import * as KnownGrants from './lib/KnownGrants.js';
 
-/** @typedef {import('@advanced-rest-client/events').Authorization.OAuth2Authorization} OAuth2Settings */
-/** @typedef {import('@advanced-rest-client/events').Authorization.TokenInfo} TokenInfo */
-/** @typedef {import('@advanced-rest-client/events').Authorization.OidcTokenInfo} OidcTokenInfo */
+/** @typedef {import('./types').OAuth2Authorization} OAuth2Settings */
+/** @typedef {import('./types').TokenInfo} TokenInfo */
+/** @typedef {import('./types').OidcTokenInfo} OidcTokenInfo */
 /** @typedef {import('./types').ProcessingOptions} ProcessingOptions */
 
 export const resolveFunction = Symbol('resolveFunction');
@@ -53,9 +53,6 @@ export const grantResponseMapping = {
 
 /**
  * A library that performs OAuth 2 authorization.
- * 
- * It is build for API components ecosystem and the configuration is defined in `@advanced-rest-client/events`
- * so all components use the same configuration.
  */
 export class OAuth2Authorization {
   /**

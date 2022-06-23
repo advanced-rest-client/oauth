@@ -1,6 +1,6 @@
-/** @typedef {import('@advanced-rest-client/events').Authorization.OidcTokenInfo} OidcTokenInfo */
-/** @typedef {import('@advanced-rest-client/events').Authorization.OidcTokenError} OidcTokenError */
-/** @typedef {import('@advanced-rest-client/events').Authorization.TokenInfo} TokenInfo */
+/** @typedef {import('../types').OidcTokenInfo} OidcTokenInfo */
+/** @typedef {import('../types').OidcTokenError} OidcTokenError */
+/** @typedef {import('../types').TokenInfo} TokenInfo */
 
 export class Tokens {
   /**

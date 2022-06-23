@@ -4,7 +4,7 @@ import { OAuth2Authorization } from '../../src/OAuth2Authorization.js';
 
 // responses are defined in the ./ServerMock.js
 
-/** @typedef {import('@advanced-rest-client/events').Authorization.OAuth2Authorization} OAuth2Settings */
+/** @typedef {import('../../src/types').OAuth2Authorization} OAuth2Settings */
 
 describe('OAuth2', () => {
   describe('client credentials grant', () => {

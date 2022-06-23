@@ -4,7 +4,7 @@ import { OidcAuthorization } from '../../src/OidcAuthorization.js';
 import env from '../env.js';
 
 /** @typedef {import('../../src/types').OpenIdProviderMetadata} OpenIdProviderMetadata */
-/** @typedef {import('@advanced-rest-client/events').Authorization.OidcTokenInfo} OidcTokenInfo */
+/** @typedef {import('../../src/types').OidcTokenInfo} OidcTokenInfo */
 
 describe('OidcAuthorization', () => {
   const oauth2redirect = `${window.location.origin}/oauth-popup.html`;

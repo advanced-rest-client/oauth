@@ -1,5 +1,5 @@
-/** @typedef {import('@advanced-rest-client/events').Authorization.OAuth2AuthorizationRequestCustomData} OAuth2AuthorizationRequestCustomData */
-/** @typedef {import('@advanced-rest-client/events').Authorization.OAuth2CustomData} OAuth2CustomData */
+/** @typedef {import('./types').OAuth2AuthorizationRequestCustomData} OAuth2AuthorizationRequestCustomData */
+/** @typedef {import('./types').OAuth2CustomData} OAuth2CustomData */
 
 /**
  * Applies custom properties defined in the OAuth settings object to the URL.

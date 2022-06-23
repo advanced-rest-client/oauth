@@ -1,4 +1,4 @@
-/** @typedef {import('@advanced-rest-client/events').Authorization.OAuth2Authorization} OAuth2Settings */
+/** @typedef {import('./types').Authorization.OAuth2Authorization} OAuth2Settings */
 
 /**
  * Checks if the URL has valid scheme for OAuth flow.
