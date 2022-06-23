@@ -4,12 +4,12 @@ import { OAuth2Authorization } from '../../src/OAuth2Authorization.js';
 
 // responses are defined in the ./ServerMock.js
 
-/** @typedef {import('../../src/types').OAuth2Authorization} OAuth2Settings */
+/** @typedef {import('../../src/types').OAuth2Config} OAuth2Config */
 
 describe('OAuth2', () => {
   describe('client credentials grant', () => {
     describe('Body delivery method', () => {
-      const baseConfig = /** @type OAuth2Settings */ (Object.freeze({
+      const baseConfig = /** @type OAuth2Config */ (Object.freeze({
         grantType: 'client_credentials',
         clientId: 'auth-code-cid',
         clientSecret: 'cc-secret',
@@ -78,7 +78,7 @@ describe('OAuth2', () => {
     });
 
     describe('Headers delivery method', () => {
-      const baseConfig = /** @type OAuth2Settings */ (Object.freeze({
+      const baseConfig = /** @type OAuth2Config */ (Object.freeze({
         grantType: 'client_credentials',
         clientId: 'auth-code-cid',
         clientSecret: 'cc-secret',

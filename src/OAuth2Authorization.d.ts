@@ -1,4 +1,4 @@
-import { ProcessingOptions, OAuth2Authorization as OAuth2Config, TokenInfo } from './types';
+import { ProcessingOptions, OAuth2Config, TokenInfo } from './types';
 
 export declare const resolveFunction: unique symbol;
 export declare const rejectFunction: unique symbol;

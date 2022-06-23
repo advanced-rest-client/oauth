@@ -1,4 +1,4 @@
-import { OAuth2Authorization } from "./types";
+import { OAuth2Config } from "./types";
 
 /**
  * Checks if the URL has valid scheme for OAuth flow.
@@ -17,7 +17,7 @@ import { OAuth2Authorization } from "./types";
  * @param settings authorization settings
  * @throws {Error} When settings are not valid
  */
-export function sanityCheck(settings: OAuth2Authorization): void;
+export function sanityCheck(settings: OAuth2Config): void;
 
 /**
  * Generates a random string of characters.

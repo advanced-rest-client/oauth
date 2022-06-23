@@ -239,7 +239,7 @@ interface BaseOAuth2Authorization {
 /**
  * OAuth 2 configuration object used in Advanced REST Client and API Components.
  */
-export interface OAuth2Authorization extends BaseOAuth2Authorization {
+export interface OAuth2Config extends BaseOAuth2Authorization {
   /**
    * The grant type of the OAuth 2 flow.
    *
